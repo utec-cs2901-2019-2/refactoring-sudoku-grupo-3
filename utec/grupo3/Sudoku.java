@@ -42,26 +42,35 @@ public class Sudoku{
     {
         int rs = 3 * (int) Math.floor((row - 1) / 3);
         int cs = 3 * (int) Math.floor((col - 1) / 3);
-        
-        for (int r = rs; r < rs + 3; ++r)
-        {
-            for (int c = cs; c < cs + 3; ++cs)
-            {
+
+        for (int r = rs; r < rs + 3; ++r) {
+            for (int c = cs; c < cs + 3; ++cs) {
                 if (this.board[r][c].val == number)
                     return false;
             }
         }
         return true;
     }
-  public boolean isEnd() {
-    for (int col = 0; col < 9; ++col) {
-      for (int row = 0; row < 9; ++row) {
-        if (board[col][row] == 0)
-        {
-          return false;
+    
+    public boolean makeMove(int number, int row, int col)
+    {
+        if (this.checkRow(number, row, col) && this.checkCol(number, row, col) && this.checkQuad(number, row, col)) {
+            if (this.board[row][col].mutable == true)
+            {
+                this.board[row][col].val = number;
+            }
         }
-      }
+        return false;
     }
-    return true;
-  }
+
+    public boolean isEnd() {
+        for (int col = 0; col < 9; ++col) {
+            for (int row = 0; row < 9; ++row) {
+                if (board[col][row].val == 0) {
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
 }
