@@ -19,7 +19,7 @@ public class Main{
                 System.out.println("Invalid move");
                 continue;         
             }
-            s.display();
+            s.printBoard();
             if(s.isEnd()){
                 System.out.println("Win");
                 break;
