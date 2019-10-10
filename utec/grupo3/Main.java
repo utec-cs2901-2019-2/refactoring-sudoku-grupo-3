@@ -14,13 +14,13 @@ public class Main{
             System.out.println("Enter value: ");
             int val = in.nextInt();
 
-            boolean valid = s.make_move(x,y,val);
+            boolean valid = s.makeMove(x,y,val);
             if(!valid){
                 System.out.println("Invalid move");
                 continue;         
             }
-            s.display();
-            if(s.is_end()){
+            s.printBoard();
+            if(s.isEnd()){
                 System.out.println("Win");
                 break;
             }
