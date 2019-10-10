@@ -3,7 +3,6 @@ package utec.grupo3;
 import java.lang.Math;
 
 public class Sudoku{
-
     private boolean checkRow(int number, int row, int col)
     {
         int r = r - 1;
