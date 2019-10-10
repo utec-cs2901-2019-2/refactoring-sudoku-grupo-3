@@ -8,7 +8,7 @@ public class Sudoku{
     {
         int r = r - 1;
         for (int c = 0; c < 9; ++c){
-            if (this.board[r][c] == number)
+            if (this.board[r][c].val == number)
                return false;
         }
         return true;
@@ -18,7 +18,7 @@ public class Sudoku{
     {
         int c = col - 1;
         for (int r = 0; r < 9; ++r) {
-            if (this.board[r][c] == number)
+            if (this.board[r][c].val == number)
                return false;
         }
         return true;
@@ -33,7 +33,7 @@ public class Sudoku{
         {
             for (int c = cs; c < cs + 3; ++cs)
             {
-                if (this.board[r][c] == number)
+                if (this.board[r][c].val == number)
                     return false;
             }
         }
