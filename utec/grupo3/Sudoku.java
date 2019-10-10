@@ -2,7 +2,7 @@ package utec.grupo3;
 import java.lang.Math;
 
 public class Sudoku{
-    public static void printBoard() {
+    public void printBoard() {
         for (int i = 0; i < 9; i++) {
             System.out.print("\n");
             if (i % 3 == 0)
@@ -10,26 +10,11 @@ public class Sudoku{
             for (int j = 0; j < 9; j++) {
                 if (j % 3 == 0)
                     System.out.print(" ");
-                if (board[i][j].val == 0)
-                    System.out.print("  ");
-                if (board[i][j].val == 1)
-                    System.out.print("1 ");
-                if (board[i][j].val == 2)
-                    System.out.print("2 ");
-                if (board[i][j].val == 3)
-                    System.out.print("3 ");
-                if (board[i][j].val == 4)
-                    System.out.print("4 ");
-                if (board[i][j].val == 5)
-                    System.out.print("5 ");
-                if (board[i][j].val == 6)
-                    System.out.print("6 ");
-                if (board[i][j].val == 7)
-                    System.out.print("7 ");
-                if (board[i][j].val == 8)
-                    System.out.print("8 ");
-                if (board[i][j].val == 9)
-                    System.out.print("9 ");
+                if(!this.board[i][j].mutable){
+                  System.out.print("\u001B[31m" + this.board[i][j].val + "\u001B[0m" + " ");
+                } else {
+                  System.out.print(this.board[i][j].val + " ");
+                }
             }
         }
     }
