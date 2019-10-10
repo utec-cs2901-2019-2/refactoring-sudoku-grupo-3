@@ -3,7 +3,6 @@ package utec.grupo3;
 import java.lang.Math;
 
 public class Sudoku{
-
     private boolean checkRow(int number, int row, int col)
     {
         int r = r - 1;
@@ -39,4 +38,15 @@ public class Sudoku{
         }
         return true;
     }
+  public boolean isEnd() {
+    for (int col = 0; col < 9; ++col) {
+      for (int row = 0; row < 9; ++row) {
+        if (board[col][row] == 0)
+        {
+          return false;
+        }
+      }
+    }
+    return true;
+  }
 }
